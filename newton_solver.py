@@ -30,7 +30,7 @@ def sign3(i , j , N1 , N2):
             else:
                 return 0         
                 
-    def newton_iter(NNODES,ELE,F,J,H,BC):
+def newton_iter(NNODES,ELE,F,J,H,BC):
     for i in range(NNODES):
         for e in ELE:
             F[i] += np.sqrt(np.abs(H[e["N1"]-1]-H[e["N2"]-1])/e["k"]) * sign2(i , e["N1"]-1 , e["N2"]-1 , H ,BC)
